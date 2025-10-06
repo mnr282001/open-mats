@@ -14,7 +14,7 @@ export default function ThisWeekSection({
 }: ThisWeekSectionProps) {
   return (
     <div className="px-4 sm:px-6 lg:px-8 py-12">
-      <h2 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white mb-6">
+      <h2 className="text-2xl font-bold tracking-tight text-gray-900 mb-6">
         This Week
       </h2>
       {loading ? (

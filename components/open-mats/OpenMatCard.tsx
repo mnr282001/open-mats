@@ -8,12 +8,12 @@ interface OpenMatCardProps {
 
 export default function OpenMatCard({ openMat, onViewDetails }: OpenMatCardProps) {
   return (
-    <div className="flex flex-col gap-3 rounded-lg bg-white dark:bg-gray-800 p-4 shadow-sm hover:shadow-lg transition-shadow duration-300">
+    <div className="flex flex-col gap-3 rounded-lg bg-white p-4 shadow-sm hover:shadow-lg transition-shadow duration-300">
       <div>
-        <p className="text-lg font-bold text-gray-900 dark:text-white">
+        <p className="text-lg font-bold text-gray-900">
           {openMat.gym?.name || 'Unknown Gym'}
         </p>
-        <p className="text-sm text-gray-500 dark:text-gray-400">
+        <p className="text-sm text-gray-500">
           {DAYS_OF_WEEK[openMat.day_of_week]}, {formatTime(openMat.start_time)} - {formatTime(openMat.end_time)}
         </p>
       </div>
@@ -21,11 +21,11 @@ export default function OpenMatCard({ openMat, onViewDetails }: OpenMatCardProps
         <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${getGiBadgeColor(openMat.gi_nogi)}`}>
           {openMat.gi_nogi === 'gi' ? 'Gi' : openMat.gi_nogi === 'nogi' ? 'No-Gi' : 'Both'}
         </span>
-        <p className="text-gray-500 dark:text-gray-400">
+        <p className="text-gray-500">
           {openMat.gym?.drop_in_price || 'Contact for price'}
         </p>
       </div>
-      <p className="text-sm text-gray-500 dark:text-gray-400">
+      <p className="text-sm text-gray-500">
         {openMat.gym?.neighborhood || 'Austin'}
       </p>
       <button
