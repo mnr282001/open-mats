@@ -1,0 +1,39 @@
+import { OpenMatWithGym, DAYS_OF_WEEK, Gym } from '@/types';
+import { formatTime, getGiBadgeColor } from '@/lib/utils';
+
+interface OpenMatCardProps {
+  openMat: OpenMatWithGym;
+  onViewDetails: (gym: Gym | null) => void;
+}
+
+export default function OpenMatCard({ openMat, onViewDetails }: OpenMatCardProps) {
+  return (
+    <div className="flex flex-col gap-3 rounded-lg bg-white dark:bg-gray-800 p-4 shadow-sm hover:shadow-lg transition-shadow duration-300">
+      <div>
+        <p className="text-lg font-bold text-gray-900 dark:text-white">
+          {openMat.gym?.name || 'Unknown Gym'}
+        </p>
+        <p className="text-sm text-gray-500 dark:text-gray-400">
+          {DAYS_OF_WEEK[openMat.day_of_week]}, {formatTime(openMat.start_time)} - {formatTime(openMat.end_time)}
+        </p>
+      </div>
+      <div className="flex items-center justify-between text-sm">
+        <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${getGiBadgeColor(openMat.gi_nogi)}`}>
+          {openMat.gi_nogi === 'gi' ? 'Gi' : openMat.gi_nogi === 'nogi' ? 'No-Gi' : 'Both'}
+        </span>
+        <p className="text-gray-500 dark:text-gray-400">
+          {openMat.gym?.drop_in_price || 'Contact for price'}
+        </p>
+      </div>
+      <p className="text-sm text-gray-500 dark:text-gray-400">
+        {openMat.gym?.neighborhood || 'Austin'}
+      </p>
+      <button
+        onClick={() => onViewDetails(openMat.gym || null)}
+        className="mt-2 text-sm font-semibold text-[#E54B86] hover:text-[#E54B86]/80"
+      >
+        View Details
+      </button>
+    </div>
+  );
+}
