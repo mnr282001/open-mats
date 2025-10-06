@@ -67,14 +67,14 @@ export default function OpenMatsApp() {
     .slice(0, 4);
 
   return (
-    <div className="min-h-screen bg-[#f7f6f8] dark:bg-[#171121]">
+    <div className="min-h-screen bg-[#f7f6f8]">
       <Header />
 
-      <div className="relative text-center py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#f7f6f8] to-white dark:from-gray-800 dark:to-gray-900">
-        <h1 className="text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-5xl md:text-6xl">
+      <div className="relative text-center py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#f7f6f8] to-white">
+        <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl md:text-6xl">
           Find Your Next Roll
         </h1>
-        <p className="mt-3 max-w-md mx-auto text-base text-gray-500 dark:text-gray-400 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
+        <p className="mt-3 max-w-md mx-auto text-base text-gray-500 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
           All Austin BJJ open mats in one place. Updated weekly.
         </p>
       </div>

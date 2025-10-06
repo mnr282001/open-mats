@@ -14,16 +14,16 @@ export default function GymDetailModal({ gym, onClose }: GymDetailModalProps) {
       onClick={onClose}
     >
       <div 
-        className="bg-white dark:bg-gray-800 rounded-lg p-6 max-w-2xl w-full max-h-[90vh] overflow-y-auto" 
+        className="bg-white rounded-lg p-6 max-w-2xl w-full max-h-[90vh] overflow-y-auto" 
         onClick={(e) => e.stopPropagation()}
       >
         <div className="flex justify-between items-start mb-4">
           <div>
-            <h3 className="text-2xl font-bold text-gray-900 dark:text-white">
+            <h3 className="text-2xl font-bold text-gray-900">
               {gym.name}
             </h3>
             {gym.affiliation && (
-              <p className="text-sm text-gray-500 dark:text-gray-400">
+              <p className="text-sm text-gray-500">
                 {gym.affiliation}
               </p>
             )}
@@ -39,10 +39,10 @@ export default function GymDetailModal({ gym, onClose }: GymDetailModalProps) {
         <div className="space-y-4">
           {gym.address && (
             <div>
-              <p className="text-sm font-medium text-gray-700 dark:text-gray-300">
+              <p className="text-sm font-medium text-gray-700">
                 Address
               </p>
-              <p className="text-sm text-gray-600 dark:text-gray-400">
+              <p className="text-sm text-gray-600">
                 {gym.address}
               </p>
               {gym.google_maps_url && (
@@ -61,20 +61,20 @@ export default function GymDetailModal({ gym, onClose }: GymDetailModalProps) {
           <div className="grid grid-cols-2 gap-4">
             {gym.drop_in_price && (
               <div>
-                <p className="text-sm font-medium text-gray-700 dark:text-gray-300">
+                <p className="text-sm font-medium text-gray-700">
                   Drop-in Price
                 </p>
-                <p className="text-sm text-gray-600 dark:text-gray-400">
+                <p className="text-sm text-gray-600">
                   {gym.drop_in_price}
                 </p>
               </div>
             )}
             {gym.membership_price && (
               <div>
-                <p className="text-sm font-medium text-gray-700 dark:text-gray-300">
+                <p className="text-sm font-medium text-gray-700">
                   Membership
                 </p>
-                <p className="text-sm text-gray-600 dark:text-gray-400">
+                <p className="text-sm text-gray-600">
                   {gym.membership_price}
                 </p>
               </div>
@@ -83,10 +83,10 @@ export default function GymDetailModal({ gym, onClose }: GymDetailModalProps) {
 
           {gym.description && (
             <div>
-              <p className="text-sm font-medium text-gray-700 dark:text-gray-300">
+              <p className="text-sm font-medium text-gray-700">
                 About
               </p>
-              <p className="text-sm text-gray-600 dark:text-gray-400">
+              <p className="text-sm text-gray-600">
                 {gym.description}
               </p>
             </div>
