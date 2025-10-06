@@ -70,7 +70,7 @@ export default function OpenMatsApp() {
     <div className="min-h-screen bg-[#f7f6f8]">
       <Header />
 
-      <div className="relative text-center py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-purple-100 to-gray-50">
+      <div className="relative text-center py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-purple-50 to-gray-50">
         <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl md:text-6xl">
           Find Your Next Roll
         </h1>
