@@ -33,7 +33,7 @@ export default function FilterBar({
   const giNogiValues = ['gi', 'nogi', 'both'];
 
   return (
-    <div className="px-4 sm:px-6 lg:px-8 py-5 border-b border-gray-200 bg-white">
+    <div className="px-4 sm:px-6 lg:px-8 py-5 border-b border-purple-200/30 bg-white/60 backdrop-blur-md">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-wrap gap-3 items-center">
           <p className="text-sm font-medium text-gray-500 mr-2">
