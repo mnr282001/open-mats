@@ -4,6 +4,7 @@ import { AgGridReact } from 'ag-grid-react';
 import { CellStyleModule, PaginationModule, RowSelectionModule, provideGlobalGridOptions, ClientSideRowModelModule, ModuleRegistry, ColDef } from 'ag-grid-community'; 
 import { OpenMatWithGym, DAYS_OF_WEEK, Gym } from '@/types';
 import { formatTime, getGiBadgeColor } from '@/lib/utils';
+import GiBadgeRenderer from './GiBadgeRenderer';
 import 'ag-grid-community/styles/ag-grid.css';
 import 'ag-grid-community/styles/ag-theme-quartz.css';
 
@@ -52,16 +53,9 @@ export default function OpenMatTable({ openMats, onViewGymDetails }: OpenMatTabl
     {
         field: 'gi_nogi',
         headerName: 'Gi/NoGi',
-        cellRenderer: (params: any) => {
-            const value = params.value;
-            const label = value === 'gi' ? 'Gi' : value === 'nogi' ? 'No-Gi' : 'Both';
-            return label;
-        },
-        cellClass: (params: any) => {
-            return getGiBadgeColor(params.value);
-        },
+        cellRenderer: GiBadgeRenderer,
         width: 120,
-    },
+      },
     {
       field: 'gym.neighborhood',
       headerName: 'Area',
