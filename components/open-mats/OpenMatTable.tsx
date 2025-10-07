@@ -8,16 +8,7 @@ import GiBadgeRenderer from './GiBadgeRenderer';
 import 'ag-grid-community/styles/ag-grid.css';
 import 'ag-grid-community/styles/ag-theme-quartz.css';
 
-
-
-ModuleRegistry.registerModules([ RowSelectionModule ]); 
-
-ModuleRegistry.registerModules([ PaginationModule ]); 
-
-ModuleRegistry.registerModules([ CellStyleModule ]); 
-
-ModuleRegistry.registerModules([ClientSideRowModelModule]);
-
+ModuleRegistry.registerModules([ RowSelectionModule, PaginationModule, CellStyleModule, ClientSideRowModelModule ]); 
 
 // Mark all grids as using legacy themes
 provideGlobalGridOptions({ theme: "legacy" });
@@ -72,8 +63,7 @@ export default function OpenMatTable({ openMats, onViewGymDetails }: OpenMatTabl
 
   const defaultColDef = useMemo(() => ({
     sortable: true,
-    // filter: true,
-    resizable: true,
+    resizable: false,
   }), []);
 
   return (
