@@ -1,5 +1,6 @@
 import { OpenMatWithGym, DAYS_OF_WEEK, Gym } from '@/types';
 import { formatTime, getGiBadgeColor } from '@/lib/utils';
+import GiBadgeRenderer from './GiBadgeRenderer';
 
 interface OpenMatCardProps {
   openMat: OpenMatWithGym;
@@ -18,9 +19,7 @@ export default function OpenMatCard({ openMat, onViewDetails }: OpenMatCardProps
         </p>
       </div>
       <div className="flex items-center justify-between text-sm">
-        <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${getGiBadgeColor(openMat.gi_nogi)}`}>
-          {openMat.gi_nogi === 'gi' ? 'Gi' : openMat.gi_nogi === 'nogi' ? 'No-Gi' : 'Both'}
-        </span>
+        <GiBadgeRenderer value={openMat.gi_nogi} />
         <p className="text-gray-500">
           {openMat.gym?.drop_in_price || 'Contact for price'}
         </p>
