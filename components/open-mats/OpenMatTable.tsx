@@ -1,16 +1,13 @@
 "use client"
 import { useMemo } from 'react';
 import { AgGridReact } from 'ag-grid-react';
-import { ModuleRegistry } from 'ag-grid-community';
-import { ClientSideRowModelModule } from 'ag-grid-community';
-import { ColDef } from 'ag-grid-community';
+import { CellStyleModule, PaginationModule, RowSelectionModule, provideGlobalGridOptions, ClientSideRowModelModule, ModuleRegistry, ColDef } from 'ag-grid-community'; 
 import { OpenMatWithGym, DAYS_OF_WEEK, Gym } from '@/types';
 import { formatTime, getGiBadgeColor } from '@/lib/utils';
 import 'ag-grid-community/styles/ag-grid.css';
 import 'ag-grid-community/styles/ag-theme-quartz.css';
-import { CellStyleModule } from 'ag-grid-community'; 
-import { PaginationModule } from 'ag-grid-community'; 
-import { RowSelectionModule } from 'ag-grid-community'; 
+
+
 
 ModuleRegistry.registerModules([ RowSelectionModule ]); 
 
@@ -20,7 +17,6 @@ ModuleRegistry.registerModules([ CellStyleModule ]);
 
 ModuleRegistry.registerModules([ClientSideRowModelModule]);
 
-import { provideGlobalGridOptions } from 'ag-grid-community';
 
 // Mark all grids as using legacy themes
 provideGlobalGridOptions({ theme: "legacy" });
