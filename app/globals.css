@@ -17,3 +17,90 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* AG Grid customization */
+.ag-theme-alpine {
+  --ag-background-color: white;
+  --ag-header-background-color: rgb(249, 250, 251);
+  --ag-odd-row-background-color: white;
+  --ag-row-hover-color: rgb(249, 250, 251);
+  --ag-border-color: rgb(229, 231, 235);
+  --ag-header-foreground-color: rgb(107, 114, 128);
+  --ag-foreground-color: rgb(17, 24, 39);
+  --ag-font-size: 14px;
+  --ag-font-family: var(--font-space-grotesk), system-ui, sans-serif;
+}
+
+.ag-theme-alpine .ag-header-cell-label {
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: 0.05em;
+}
+
+.ag-theme-alpine .ag-row {
+  cursor: pointer;
+}
+
+/* AG Grid Custom Styling */
+.ag-theme-quartz {
+  --ag-background-color: #ffffff;
+  --ag-foreground-color: #1f2937;
+  --ag-header-background-color: #f9fafb;
+  --ag-header-foreground-color: #6b7280;
+  --ag-odd-row-background-color: #ffffff;
+  --ag-row-hover-color: #f3f4f6;
+  --ag-selected-row-background-color: #ede9fe;
+  --ag-border-color: #e5e7eb;
+  --ag-row-border-color: #f3f4f6;
+  --ag-font-family: var(--font-space-grotesk), system-ui, -apple-system, sans-serif;
+  --ag-font-size: 14px;
+  --ag-border-radius: 0.75rem;
+}
+
+.ag-theme-quartz .ag-header {
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.ag-theme-quartz .ag-header-cell-label {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  color: #6b7280;
+}
+
+.ag-theme-quartz .ag-row {
+  cursor: pointer;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.ag-theme-quartz .ag-row:hover {
+  background-color: #f9fafb !important;
+}
+
+.ag-theme-quartz .ag-cell {
+  display: flex;
+  align-items: center;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.ag-theme-quartz .ag-paging-panel {
+  border-top: 1px solid #e5e7eb;
+  padding: 16px 24px;
+  background-color: #f9fafb;
+}
+
+.ag-theme-quartz .ag-paging-button {
+  color: #47159d;
+}
+
+.ag-theme-quartz .ag-paging-button:hover {
+  background-color: #ede9fe;
+}
+
+/* Custom badge styling in AG Grid */
+.ag-theme-quartz .ag-cell .inline-flex {
+  display: inline-flex;
+}
