@@ -8,8 +8,22 @@ import { OpenMatWithGym, DAYS_OF_WEEK, Gym } from '@/types';
 import { formatTime, getGiBadgeColor } from '@/lib/utils';
 import 'ag-grid-community/styles/ag-grid.css';
 import 'ag-grid-community/styles/ag-theme-quartz.css';
+import { CellStyleModule } from 'ag-grid-community'; 
+import { PaginationModule } from 'ag-grid-community'; 
+import { RowSelectionModule } from 'ag-grid-community'; 
+
+ModuleRegistry.registerModules([ RowSelectionModule ]); 
+
+ModuleRegistry.registerModules([ PaginationModule ]); 
+
+ModuleRegistry.registerModules([ CellStyleModule ]); 
 
 ModuleRegistry.registerModules([ClientSideRowModelModule]);
+
+import { provideGlobalGridOptions } from 'ag-grid-community';
+
+// Mark all grids as using legacy themes
+provideGlobalGridOptions({ theme: "legacy" });
 
 interface OpenMatTableProps {
   openMats: OpenMatWithGym[];
@@ -40,15 +54,17 @@ export default function OpenMatTable({ openMats, onViewGymDetails }: OpenMatTabl
       cellClass: 'font-semibold',
     },
     {
-      field: 'gi_nogi',
-      headerName: 'Gi/NoGi',
-      cellRenderer: (params: any) => {
-        const value = params.value;
-        const label = value === 'gi' ? 'Gi' : value === 'nogi' ? 'No-Gi' : 'Both';
-        const colorClass = getGiBadgeColor(value);
-        return `<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${colorClass}">${label}</span>`;
-      },
-      width: 120,
+        field: 'gi_nogi',
+        headerName: 'Gi/NoGi',
+        cellRenderer: (params: any) => {
+            const value = params.value;
+            const label = value === 'gi' ? 'Gi' : value === 'nogi' ? 'No-Gi' : 'Both';
+            return label;
+        },
+        cellClass: (params: any) => {
+            return getGiBadgeColor(params.value);
+        },
+        width: 120,
     },
     {
       field: 'gym.neighborhood',
@@ -66,7 +82,7 @@ export default function OpenMatTable({ openMats, onViewGymDetails }: OpenMatTabl
 
   const defaultColDef = useMemo(() => ({
     sortable: true,
-    filter: true,
+    // filter: true,
     resizable: true,
   }), []);
 
